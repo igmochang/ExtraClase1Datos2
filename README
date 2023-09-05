@@ -1,1 +1,24 @@
 Extra Clase 1 del curso de Algoritmos y Estructuras de Datos 2
+
+Se implementa una lista simple utilizando nodos y punteros la cual cuanta con un recolector de basure en el lenguaje C++
+
+Se cuenta con 3 clases:
+
+Node: Almacena un valor de tipo int y un puntero al siguiente, así como los respectivos métodos para 
+consultar o modificar estos datos. Se deben sobrecargar los métodos new y delete para que utilice 
+el espacio re-utilizable que provee Collector, es decir, tanto new como delete deben comunicarse con 
+la clase Collector.
+
+List: Lista enlazada simple formada por objetos de tipo Node. La lista debe almacenar un puntero al
+inicio de la lista y permitir consultar o modificar este puntero. Debe permitir insertar nodos al inicio 
+de la lista.
+
+Collector: Es responsable de reciclar la memoria liberada en List. Collector es implementado 
+mediante una lista que guarda las direcciones de memoria que han sido liberadas. Cuando se haga 
+uso del delete de Node, Collector debe reciclar el espacio de memoria que tenía ese Node, es decir, 
+agregar el puntero del espacio que está siendo liberado a la lista que implementa Collector. Cuando 
+se haga uso del new de Node, Collector debe validar si existe algún espacio reciclado que pueda 
+asignar (devolver el puntero del espacio reciclado) o caso contrario hacer uso del new global para 
+reservar un nuevo espacio en memoria para ese Node. El método new debe recibir como parámetro 
+el tamaño que se desea reservar mientras que el delete debe recibir el puntero del Node que se desea 
+eliminar. 
